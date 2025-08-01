@@ -70,7 +70,7 @@ def scheduled_check():
         check_for_updates()
         time.sleep(CHECK_INTERVAL)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     thread = threading.Thread(target=scheduled_check, daemon=True)
     thread.start()
     app.run(host='0.0.0.0', port=5000)
